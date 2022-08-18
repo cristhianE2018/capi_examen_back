@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_domicilios', function (Blueprint $table) {
-            $table->id();
+        Schema::create('user_domicilio', function (Blueprint $table) {
+            $table->id('user_id');
+            $table->string('domicilio');
+            $table->integer('numero_exterior');
+            $table->string('colonia');
+            $table->integer('cp');
+            $table->string('ciudad');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_domicilios');
+        Schema::dropIfExists('user_domicilio');
     }
 };
